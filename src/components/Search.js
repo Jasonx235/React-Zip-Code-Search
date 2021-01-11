@@ -22,7 +22,7 @@ class Search extends React.Component {
         return (
             <div>
                 <form onSubmit={this.onSubmit}>
-                <input type='text' name="zipcode" value={this.state.zipcode} onChange={this.onChange} placeholder="Enter zip code ..."/>
+                <input type='text' name="zipcode" value={this.state.zipcode} onChange={this.onChange} placeholder="Enter zip code..."/>
                 <input type='submit' value="submit"/>
                 </form>
                 
