@@ -19,7 +19,7 @@ class App extends React.Component{
   //Retriving Data 
   findZipData = (zipcode) => {
     //console.log(zipcode);
-    axios.get(`http://ctp-zip-api.herokuapp.com/zip/${zipcode}`)
+    axios.get(`https://ctp-zip-api.herokuapp.com/zip/${zipcode}`)
     .then(res => { this.setState({zipData: res.data});
        this.goodRes();
     })
@@ -42,7 +42,9 @@ class App extends React.Component{
   return (
     <div className="App">
       <div className="container">
+        <img src="icons8-search-64.png"/>
         <h1>Zip Code Search</h1>
+        <p>Enter a Zip Code to find more info!</p>
         <Search findZipData = {this.findZipData}/>
         <p id="error">Zip Code Not Found!</p>
         <DisplayData zipData={this.state.zipData}/>
