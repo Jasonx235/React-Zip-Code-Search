@@ -12,7 +12,7 @@ class App extends React.Component{
       zipData: []
       
     }
-    this.findZipData = this.findZipData.bind(this);
+    
   }
 
 
@@ -20,10 +20,22 @@ class App extends React.Component{
   findZipData = (zipcode) => {
     //console.log(zipcode);
     axios.get(`http://ctp-zip-api.herokuapp.com/zip/${zipcode}`)
-    .then(res => { this.setState({zipData: res.data})
-       console.log(this.state.zipData);
+    .then(res => { this.setState({zipData: res.data});
+       this.goodRes();
     })
-    .catch(err => console.log("No Zip found"));
+    .catch(err => {this.setState({zipData: []});
+      this.badRes();
+    })
+  }
+
+  goodRes= () =>{
+    console.log(this.state.cityData);
+    document.getElementById("error").style.display = "none";
+  }
+
+  badRes = () =>{
+    document.getElementById("error").style.display = "block";
+    setTimeout(this.goodRes, 2000);
   }
 
   render(){
@@ -32,6 +44,7 @@ class App extends React.Component{
       <div className="container">
         <h1>Zip Code Search</h1>
         <Search findZipData = {this.findZipData}/>
+        <p id="error">Zip Code Not Found!</p>
         <DisplayData zipData={this.state.zipData}/>
       </div>
       

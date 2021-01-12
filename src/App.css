@@ -68,3 +68,7 @@ input{
   border-radius: 4px;
   margin: 0.3125rem;
 }
+
+#error{
+  display: none;
+}
