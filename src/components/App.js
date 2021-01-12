@@ -12,6 +12,7 @@ class App extends React.Component{
       zipData: []
       
     }
+    this.findZipData = this.findZipData.bind(this);
   }
 
 
@@ -40,3 +41,5 @@ class App extends React.Component{
 }
 
 export default App;
+
+
