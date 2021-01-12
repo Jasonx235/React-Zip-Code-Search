@@ -3,4 +3,5 @@
 Using Axios to fetch data from http://ctp-zip-api.herokuapp.com/zip/:zipcode
 
 ### View Project
-![](Capture.PNG)
+<img align="center" src="Capture.PNG" alt="example">
+
